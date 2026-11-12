@@ -14,7 +14,9 @@
       "extensions": [
         "ms-python.python",
         "ms-vsliveshare.vsliveshare",
-        "gabrielgrinberg.auto-run-command"
+        "gabrielgrinberg.auto-run-command",
+        "-GitHub.copilot",
+        "-GitHub.copilot-chat"
       ],
       "settings": {
         "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
@@ -34,7 +36,9 @@
             "condition": "hasFile: README.md",
             "command": "markdown.showPreviewToSide"
           }
-        ]
+        ],
+        "chat.disableAIFeatures": true,
+        "chat.commandCenter.enabled": false
       }
     },
     "codespaces": {
