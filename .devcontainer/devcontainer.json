@@ -1,0 +1,47 @@
+{
+  "name": "Interview warm-up",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
+  "postCreateCommand": "python -m venv .venv && .venv/bin/python -m pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vsliveshare.vsliveshare",
+        "gabrielgrinberg.auto-run-command"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+        "python.testing.pytestEnabled": true,
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestArgs": [
+          "tests"
+        ],
+        "github.copilot.enable": {
+          "*": false
+        },
+        "workbench.editorAssociations": {
+          "*.md": "default"
+        },
+        "auto-run-command.rules": [
+          {
+            "condition": "hasFile: README.md",
+            "command": "markdown.showPreviewToSide"
+          }
+        ]
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "warmup.py"
+      ]
+    }
+  }
+}
